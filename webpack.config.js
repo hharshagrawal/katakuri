@@ -3,7 +3,7 @@ const path = require("path");
 var DIST_DIR = path.resolve(__dirname, "dist");
 var SRC_DIR = path.resolve(__dirname, "src");
 
-var config = {
+module.exports = {
     entry : SRC_DIR + "/app/index.js",
     output : {
         path : DIST_DIR + "/app",
@@ -21,7 +21,9 @@ var config = {
                 }
             }
         ]
-    }
+    },
+    devServer: {
+        open: true, // to open the local server in browser
+        contentBase: __dirname + '/src',
+    },
 };
-
-module.exports = config;
