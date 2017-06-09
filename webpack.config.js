@@ -19,6 +19,18 @@ module.exports = {
                 query : {
                     presets : ["react", "es2015", "stage-2"]
                 }
+            },
+            {
+                test: /\.(sass|scss)$/, //Check for sass or scss file names
+                use: [
+                  'style-loader',
+                  'css-loader',
+                  'sass-loader',
+                ]
+            },
+            {
+                test: /\.json$/,
+                loader: "json-loader"  //JSON loader
             }
         ]
     },
