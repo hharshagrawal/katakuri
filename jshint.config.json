@@ -1,0 +1,12 @@
+ "jshintConfig": {
+    "esversion": "6",
+    "browser": true,
+    "undef": true,
+    "unused": true,
+    "strict": false,
+    "vars": true,
+    "plusplus": true,
+    "devel": true,
+    "nomen": true,
+    "indent": 4
+  }

@@ -1,23 +1,22 @@
-// // import 'styles/styles.scss';
-//
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// // import HelloWorld from 'components/HelloWorld';
-//
-// // const App = () => "<p>HelloWorld</p>";
-//
-// ReactDOM.render(
-//   <p>HelloWorld</p>,
-//   document.getElementById('app')
-// );
-
 'use strict';
 
-import _ from 'lodash'; //ES6 import to check our babel loader
+import _ from 'lodash';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const array = [1];
-const other = _.concat(array, 2, [3], [[4]]);
+class App extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1>First App</h1>
+            </div>
+        );
+    };
+}
 
-console.log(other); //[1, 2, 3, [4]]
+ReactDOM.render(
+    <App/>,
+    document.getElementById('app')
+);
 
 console.log("It Works?");
