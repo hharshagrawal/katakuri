@@ -14,20 +14,19 @@ module.exports = {
     module : {
         rules : [
             {
-                test : /\.js?/,
+                enforce : "pre",
+                test : /\.js$/,
                 include : SRC_DIR,
-                loaders : [
-                    {
-                        loader : "babel-loader",
-                        query : 
-                        {
-                            presets : ["react", "es2015", "stage-2"]
-                        }
-                    }, 
-                    {
-                        loader: "eslint-loader"
-                    }
-                ]
+                loader : "eslint-loader"
+            },
+            {
+                test : /\.js$/,
+                include : SRC_DIR,
+                loader : "babel-loader",
+                query :
+                {
+                    presets : ["react", "es2015", "stage-2"]
+                }
             },
             {
                 test: /\.(sass|scss)$/, //Check for sass or scss file names
