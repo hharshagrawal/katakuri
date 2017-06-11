@@ -1,15 +1,14 @@
 'use strict';
-
 import _ from 'lodash';
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom';
 
+// Components Import
 import { Header } from './components/Header/Header';
 import { Home } from './components/Home';
 import { Login } from './components/Login/Login';

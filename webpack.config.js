@@ -1,4 +1,5 @@
-const path = require("path");
+var path = require("path");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var DIST_DIR = path.resolve(__dirname, "dist");
 var SRC_DIR = path.resolve(__dirname, "src");
@@ -8,7 +9,7 @@ module.exports = {
     output : {
         path : DIST_DIR + "/app",
         filename : "bundle.js",
-        publicPath : "/app/"
+        // publicPath : "/app/"
     },
     module : {
         rules : [
@@ -27,11 +28,27 @@ module.exports = {
                   'css-loader',
                   'sass-loader',
                 ]
+            },
+            {
+                test: /\.ico$/,
+                loader: "file-loader",
+                query: { mimetype: "image/x-icon" }
             }
         ]
     },
+    plugins: [
+        new HtmlWebpackPlugin(
+            {
+                inject: true,
+                template: 'src/index.html',
+                favicon: 'src/app/img/favicon.ico',
+            }
+        ),
+    ],
     devServer: {
         open: true, // to open the local server in browser
         contentBase: __dirname + '/src',
+        historyApiFallback: true,
+        inline: true,
     },
 };
